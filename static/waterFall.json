@@ -1,0 +1,12 @@
+{
+  "sites": [
+    {"name": "带你领略魔兽中的风景1", "src": "/windrunner/static/image/1.jpg" },
+    {"name": "带你领略魔兽中的风景2", "src": "/windrunner/static/image/124_54252e4aecefa.jpg"},
+    {"name": "带你领略魔兽中的风景3", "src": "/windrunner/static/image/cb98c3decb93f29cf42ac4c11cef88fe680c88ea.png"},
+    {"name": "带你领略魔兽中的风景4", "src": "/windrunner/static/image/U8276P115DT20121113135404.jpg"},
+    {"name": "带你领略魔兽中的风景5", "src": "/windrunner/static/image/t01eb60c4dca5fc767c.jpg"},
+    {"name": "带你领略魔兽中的风景6", "src": "/windrunner/static/image/xierwanas.jpg"},
+    {"name": "带你领略魔兽中的风景7", "src": "/windrunner/static/image/wuyaowang.jpg"},
+    {"name": "带你领略魔兽中的风景8", "src": "/windrunner/static/image/1.jpg"}
+  ]
+}

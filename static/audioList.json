@@ -1,0 +1,24 @@
+{
+  "avatar_url": "http://p1.music.126.net/Dj86YWsr3ubX2p-ZYF_E6w==/109951163521340821.jpg",
+  "background_url": "http://p1.music.126.net/o5wfl8YEe2wQU6LaSFBsBQ==/109951164585476937.jpg",
+  "description": "",
+  "detail_description": "",
+  "nickname": "迷幻电音",
+  "playlist": [
+    {"music_id": "1", "name": "Nova", "url": "/windrunner/static/audio/Nova.mp3", "imgUrl":"/windrunner/static/audioImg/Nova.jpg", "user_name": "Ahrix", "album": "Nova"},
+    {"music_id": "2", "name": "Beautiful Lies", "url": "/windrunner/static/audio/Beautiful Lies.mp3", "imgUrl":"/windrunner/static/audioImg/Beautiful Lies.jpg", "user_name": "B Complex", "album": "Sick Music"},
+    {"music_id": "3", "name": "A Little Story", "url": "/windrunner/static/audio/A Little Story.mp3", "imgUrl":"/windrunner/static/audioImg/A Little Story.jpg", "user_name": "Valentin", "album": "My View"},
+    {"music_id": "4", "name": "Life", "url": "/windrunner/static/audio/Life.mp3", "imgUrl":"/windrunner/static/audioImg/Life.jpg", "user_name": "Tobu", "album": "Feel Good EDM Memories"},
+    {"music_id": "5", "name": "Victory", "url": "/windrunner/static/audio/Victory.mp3", "imgUrl":"/windrunner/static/audioImg/Victory.jpg", "user_name": "Two Steps From Hell&Thomas Bergersen", "album": "Battlecry"},
+    {"music_id": "6", "name": "You", "url": "/windrunner/static/audio/You.mp3", "imgUrl":"/windrunner/static/audioImg/You.jpg", "user_name": "Approaching Nirvana", "album": "Blocking the Sky"},
+    {"music_id": "7", "name": "Horizon", "url": "/windrunner/static/audio/Horizon.mp3", "imgUrl":"/windrunner/static/audioImg/Horizon.jpg", "user_name": "Janji", "album": "Horizon"},
+    {"music_id": "8", "name": "Monody", "url": "/windrunner/static/audio/Monody.mp3", "imgUrl":"/windrunner/static/audioImg/Monody.jpg", "user_name": "TheFatRat&Laura Brehm", "album": "Monody"},
+    {"music_id": "9", "name": "Trip", "url": "/windrunner/static/audio/Trip.mp3", "imgUrl":"/windrunner/static/audioImg/Trip.jpg", "user_name": "Axero", "album": "Trip"},
+    {"music_id": "10", "name": "Tokyo Drift", "url": "/windrunner/static/audio/Tokyo Drift.mp3", "imgUrl":"/windrunner/static/audioImg/Tokyo Drift.jpg", "user_name": "Various Artists", "album":"The Fast And The Furious Tokyo Drift"},
+    {"music_id": "11", "name": "Sold Out", "url": "/windrunner/static/audio/Sold Out.mp3", "imgUrl":"/windrunner/static/audioImg/Sold Out.jpg", "user_name": "Hawk Nelson", "album":"钻石"},
+    {"music_id": "12", "name": "Walk Thru Fire", "url": "/windrunner/static/audio/Walk Thru Fire.mp3", "imgUrl":"/windrunner/static/audioImg/Walk Thru Fire.jpg", "user_name": "Vicetone&Meron Ryan", "album": "Walk Thru Fire"},
+    {"music_id": "13", "name": "Something Just Like This", "url": "/windrunner/static/audio/Something Just Like This.mp3", "imgUrl":"/windrunner/static/audioImg/Something Just Like This.jpg", "user_name": "The Chainsmokers&Coldplay", "album": "Memories...Do Not Open"},
+    {"music_id": "14", "name": "Faded", "url": "/windrunner/static/audio/Faded.mp3", "imgUrl":"/windrunner/static/audioImg/Faded.jpg", "user_name": "Alan Walker&Iselin Solheim", "album": "Faded"},
+    {"music_id": "15", "name": "China-X", "url": "/windrunner/static/audio/China-X.mp3", "imgUrl":"/windrunner/static/audioImg/China-X.jpg", "user_name": "徐梦圆", "album": "Change"}
+  ]
+}
