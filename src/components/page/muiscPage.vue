@@ -252,7 +252,7 @@ export default {
     }
   },
   activated() {
-    this.play()
+    this.pause()
   },
   deactivated () {
     this.playing = true

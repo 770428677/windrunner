@@ -1,7 +1,7 @@
 <template>
   <div class="programPage">
     <ul class="articles">
-      <li v-for="(articleArr,index) in articleArr" :key="index">
+      <li v-for="(articleArr,index) in articleArr" :key="index" @click="parameter(index)">
         <ol>
           <li>
             <img :src="articleArr.src" alt="">
@@ -32,11 +32,24 @@ export default {
   data () {
     return {
       articleArr: [
-        {name: 'css通用样式', src: '/windrunner/static/img/css.png', type: 'css', from: '笔记', href: '', keyWords: 'css, 通用样式'},
-        {name: 'input中的placeholder如何设置颜色', src: '/windrunner/static/img/css.png', type: 'css', from: '转载自:', href: 'https://blog.csdn.net/zeyu1021/article/details/44563393', keyWords: 'placeholder, 设置颜色'},
-        {name: 'vue之tab标签切换功能', src: '/windrunner/static/img/vue.png', type: 'vue', from: '转载自:', href: 'https://blog.csdn.net/weixin_41014370/article/details/79610440', keyWords: 'vue, 页签切换'},
-        {name: 'vue(事件处理：v-on)', src: '/windrunner/static/img/vue.png', type: 'vue', from: '转载自:', href: 'https://blog.csdn.net/qq_42238554/article/details/86592295', keyWords: 'v-on事件处理, 事件修饰符'}
-      ]
+        {id: '0', name: 'css通用样式', src: '/windrunner/static/img/css.png', type: 'css', from: '笔记', href: '', keyWords: 'css, 通用样式'},
+        {id: '1', name: 'input中的placeholder如何设置颜色', src: '/windrunner/static/img/css.png', type: 'css', from: '转载自:', href: 'https://blog.csdn.net/zeyu1021/article/details/44563393', keyWords: 'placeholder, 设置颜色'},
+        {id: '2', name: 'vue之tab标签切换功能', src: '/windrunner/static/img/vue.png', type: 'vue', from: '转载自:', href: 'https://blog.csdn.net/weixin_41014370/article/details/79610440', keyWords: 'vue, 页签切换'},
+        {id: '3', name: 'vue(事件处理：v-on)', src: '/windrunner/static/img/vue.png', type: 'vue', from: '转载自:', href: 'https://blog.csdn.net/qq_42238554/article/details/86592295', keyWords: 'v-on事件处理, 事件修饰符'}
+      ],
+      id: 0
+    }
+  },
+  methods:{
+    parameter (index) {
+      this.id = index
+      this.$router.push({
+        path: '/Article',
+        query: {
+          id: this.id
+        }
+      })
+
     }
   }
 }

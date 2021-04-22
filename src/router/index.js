@@ -4,6 +4,7 @@ import programRouter from './program'
 import gameRouter from './game'
 import musicRouter from './music'
 import homeRouter from './home'
+import articleRouter from './article'
 
 Vue.use(Router)
 
@@ -19,6 +20,7 @@ export default new Router({
     programRouter,
     gameRouter,
     musicRouter,
-    homeRouter
+    homeRouter,
+    articleRouter
   ]
 })

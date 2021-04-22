@@ -1,0 +1,41 @@
+{
+  "articleArr": [
+    {
+      "id": "0",
+      "name": "css通用样式",
+      "src": "/windrunner/static/img/css.png",
+      "type": "css",
+      "from": "笔记",
+      "href": "",
+      "keyWords": "css, 通用样式",
+      "article": "body{\n  font-family: Helvetica;\n  font-size: 12px;\n}\n\n/* 清除默认样式 */\nbody, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {\n  margin: 0;\n  padding: 0;\n  -webkit-box-sizing: border-box;\n  box-sizing: border-box;\n}"
+    },
+    {"id": "1",
+     "name": "input中的placeholder如何设置颜色",
+     "src": "/windrunner/static/img/css.png",
+     "type": "css",
+     "from": "转载自:",
+     "href": "https://blog.csdn.net/zeyu1021/article/details/44563393",
+     "keyWords": "placeholder, 设置颜色",
+     "article": "之前拿到一个设计图，Placeholder是白色的，所以就查看了一下改变placeholder的方法：\n\ninput::-webkit-input-placeholder { /* WebKit browsers */\n  color: white;\n}\ninput:-moz-placeholder { /* Mozilla Firefox 4 to 18 */\n  color: white;\n}\ninput::-moz-placeholder { /* Mozilla Firefox 19+ */\n  color: white;\n}\ninput:-ms-input-placeholder { /* Internet Explorer 10+ */\n  color: white;\n}\n\n同时，根据http://caniuse.com/，这个方法可以支持IE10以上的浏览器。而且placeholder属性也是兼容到IE10以上的浏览器。\n\n所以两个不存在一个兼容，另外一个不兼容的问题。\n\n\n另外，之前思考placeholder怎么向下兼容的问题，也就是说兼容ie10一下的浏览器。后来看了一下tmall的网站，发现他们使用label的形式，然后用js控制。\n\n当input域被focus的时候，就把label的颜色变淡，如果input域有输出的时候，就把label隐藏了。"
+    },
+    {"id": "2",
+     "name": "vue之tab标签切换功能",
+     "src": "/windrunner/static/img/vue.png",
+     "type": "vue", "from": "转载自:",
+     "href": "https://blog.csdn.net/weixin_41014370/article/details/79610440",
+     "keyWords": "vue, 页签切换",
+     "article": "项目开发中，使用vue实现tab页签切换功能。具体实例如下：\n\n（1）首先定义子组件如下图：(select01.vue子组件)\n\n<template>  \n  <div slot='select01'>{{msg}}</div>  \n</template>  \n  \n<script>  \nexport default {  \n  data(){  \n    return{  \n      msg:\"select01\"  \n    }  \n  }  \n}  \n</script>  \n  \n（2）在app.vue中将子组件引入，通过v-for实现tab页签，通过@click实现页签切换，通过:class实现绑定当前页，tab切换主要依靠组件component实现，每个页签切换时，不想让改变页签内容，可以用keep-alive实现。具体代码如下：\n\n<template>  \n  <div id=\"app\">  \n    <div class=\"radio-wrap\">  \n      <div class=\"radio-group\" v-model=\"tabView\">   \n        <span \n           v-for=\"(tab ,index) in tabs\" \n           :class=\"{cur:iscur==index}\" \n           @click=\"iscur=index,tabChange('select' + (index + 1))\">\n             {{tab.name}}\n        </span>  \n      </div>  \n      <div style=\"margin:10px 0;\"></div>  \n      <keep-alive>   \n        <component v-bind:is=\"tabView\"></component>  \n      </keep-alive>   \n    </div>  \n  </div>  \n</template>  \n  \n<script>  \n  import select1 from './components/select01.vue';  \n  import select2 from './components/select02.vue';  \n  import select3 from './components/select03.vue';  \n  export default {  \n    name: 'app',  \n      data () {  \n        return {  \n          tabView: 'select1',\n          iscur: 0,   \n          tabs: [{name: \"选项一\"}, {name: \"选项二\"} ,{name: \"选项三\"}]\n        }  \n  },  \n  components: {  \n    select1,  \n    select2,  \n    select3  \n  },  \n  methods: {  \n    tabChange:function(tab){  \n      this.tabView = tab;  \n    }  \n  }  \n}  \n</script>  \n    \n（3）功能效果如下：\n"
+    },
+    {"id": "3",
+     "name": "vue(事件处理：v-on)",
+     "src": "/windrunner/static/img/vue.png",
+     "type": "vue",
+     "from": "转载自:",
+     "href": "https://blog.csdn.net/qq_42238554/article/details/86592295",
+     "keyWords": "v-on事件处理, 事件修饰符",
+     "article": "vue提供了如下修饰符：\n\n1.事件修饰符\nvue为v-on提供了事件修饰符，通过点(.)表示的指令后缀来调用修饰符。\n\n.stop\n阻止点击事件冒泡。等同于JavaScript中的event.stopPropagation()\n例如：\n\n<a v-on:click.stop=\"doThis\"></a>\n<a @click.stop=\"doThis\"></a>\n\n实例1，防止冒泡：\n\n<div id=\"app\"> \n　　<div class=\"outeer\" @click.stop=\"outer\"> \n　　　　<div class=\"middle\" @click.stop=\"middle\"> \n　　　　　　<button @click.stop=\"inner\">点击我(^_^)</button>\n 　　　　</div>\n 　　</div> \n</div>\n\n使用了.stop后，点击子节点不会捕获到父节点的事件\n\n.prevent\n防止执行预设的行为（如果事件可取消，则取消该事件，而不停止事件的进一步传播），等同于JavaScript中的event.preventDefault()，prevent等同于JavaScript的event.preventDefault()，用于取消默认事件。比如我们页面的标签，当用户点击时，通常在浏览器的网址列出#：\n例如：\n\n<a v-on:submit.prevent=\"doThis\"></a>\n1\n.capture\n与事件冒泡的方向相反，事件捕获由外到内,捕获事件：嵌套两三层父子关系，然后所有都有点击事件，点击子节点，就会触发从外至内 父节点-》子节点的点击事件\n\n<a v-on:click.capture=\"doThis\"></a>\n\n<div id=\"app\"> \n　　<div class=\"outeer\" @click.capture=\"outer\"> \n　　　　<div class=\"middle\" @click.capture=\"middle\"> \n　　　　　　<button @click.capture=\"inner\">点击我(^_^)</button>\n 　　　　</div>\n 　　</div> \n</div>\n\n.self\n只会触发自己范围内的事件，不包含子元素\n\n<a v-on:click.self=\"doThat\"></a>\n\n<div id=\"app\"> \n　　<div class=\"outeer\" @click.self=\"outer\"> \n　　　　<div class=\"middle\" @click.self=\"middle\"> \n　　　　　　<button @click.stop=\"inner\">点击我(^_^)</button>\n 　　　　</div>\n 　　</div> \n</div>\n\n.once\n只执行一次，如果我们在@click事件上添加.once修饰符，只要点击按钮只会执行一次。\n\n<a @click.once=\"doThis\"></a>\n\n.passive\nVue 还对应 addEventListener 中的 passive 选项提供了 .passive 修饰符\n\n<!-- 滚动事件的默认行为 (即滚动行为) 将会立即触发 -->\n<!-- 而不会等待 `onScroll` 完成  -->\n<!-- 这其中包含 `event.preventDefault()` 的情况 -->\n<div v-on:scroll.passive=\"onScroll\">...</div>\n\n这个 .passive 修饰符尤其能够提升移动端的性能。不要把 .passive 和 .prevent 一起使用，因为 .prevent 将会被忽略，同时浏览器可能会向你展示一个警告。请记住，.passive 会告诉浏览器你不想阻止事件的默认行为。\n\n事件修饰符还可以串联\n例如：\n\n<a v-on:click.stop.prevent=\"doThis\"></a>\n\n注：使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用 v-on:click.prevent.self 会阻止所有的点击，而 v-on:click.self.prevent 只会阻止对元素自身的点击。\n\n2.键盘修饰符\n在JavaScript事件中除了前面所说的事件，还有键盘事件，也经常需要监测常见的键值。在Vue中允许v-on在监听键盘事件时添加关键修饰符。记住所有的keyCode比较困难，所以Vue为最常用的键盘事件提供了别名：\n.enter：回车键\n.tab：制表键\n.delete：含delete和backspace键\n.esc：返回键\n.space: 空格键\n.up：向上键\n.down：向下键\n.left：向左键\n.right：向右键\n\n例如：\n\n<!-- 只有在 `keyCode` 是 13 时调用 `vm.submit()` -->\n<input v-on:keyup.13=\"submit\">\n\n记住所有的 keyCode 比较困难，所以 Vue 为最常用的按键提供了别名：\n\n<!-- 同上 -->\n<input v-on:keyup.enter=\"submit\">\n<!-- 缩写语法 -->\n<input @keyup.enter=\"submit\">\n\n可以通过全局 config.keyCodes 对象自定义按键修饰符别名：\n\n// 可以使用 `v-on:keyup.f1`\nVue.config.keyCodes.f1 = 112\n\n3.系统修饰键\n可以用如下修饰符来实现仅在按下相应按键时才触发鼠标或键盘事件的监听器。\n.ctrl\n.alt\n.shift\n.meta\n\n注意：在 Mac 系统键盘上，meta 对应 command 键 (⌘)。在 Windows 系统键盘 meta 对应 Windows 徽标键 (⊞)。在 Sun 操作系统键盘上，meta 对应实心宝石键 (◆)。在其他特定键盘上，尤其在 MIT 和 Lisp 机器的键盘、以及其后继产品，比如 Knight 键盘、space-cadet 键盘，meta 被标记为“META”。在 Symbolics 键盘上，meta 被标记为“META”或者“Meta”。\n\n例如：\n\n<!-- Alt + C -->\n<input @keyup.alt.67=\"clear\">\n<!-- Ctrl + Click -->\n<div @click.ctrl=\"doSomething\">Do something</div>\n\n注意：\n\n请注意修饰键与常规按键不同，在和 keyup 事件一起用时，事件触发时修饰键必须处于按下状态。换句话说，只有在按住 ctrl 的情况下释放其它按键，才能触发 keyup.ctrl。而单单释放 ctrl 也不会触发事件。如果你想要这样的行为，请为 ctrl 换用 keyCode：keyup.17。\n\n.exact修饰符\n.exact 修饰符允许你控制由精确的系统修饰符组合触发的事件。\n\n<!-- 即使 Alt 或 Shift 被一同按下时也会触发 -->\n<button @click.ctrl=\"onClick\">A</button>\n\n<!-- 有且只有 Ctrl 被按下的时候才触发 -->\n<button @click.ctrl.exact=\"onCtrlClick\">A</button>\n\n<!-- 没有任何系统修饰符被按下的时候才触发 -->\n<button @click.exact=\"onClick\">A</button>\n鼠标按钮修饰符\n鼠标修饰符用来限制处理程序监听特定的滑鼠按键。常见的有：\n.left\n.right\n.middle\n这些修饰符会限制处理函数仅响应特定的鼠标按钮。\n\n自定义按键修饰符别名\n在Vue中可以通过config.keyCodes自定义按键修饰符别名。例如，由于预先定义了keycode 116（即F5）的别名为f5，因此在文字输入框中按下F5，会触发prompt方法，出现alert。\n\n<template>\n  <div class=\"main\">\n      <input type=\"text\" @keyup.f5=\"prompt()\" />\n  </div>\n</template>\n<script>\nexport default {\n  data() {\n    return {\n    };\n  },\n  methods:{\n      prompt(){\n          alert(\"aaaaa\")\n      }\n  }\n};\n</script>\n\n当点击f5时立马调用prompt方法。\n\n4.修饰符\n(1).lazy\n在改变后才触发（也就是说只有光标离开input输入框的时候值才会改变）\n\n<input v-model.lazy=\"msg\" />\n1\n(2).number\n将输出字符串转为Number类型·（虽然type类型定义了是number类型，但是如果输入字符串，输出的是string）\n\n<input v-model.number=\"msg\" />\n1\n(3).trim\n自动过滤用户输入的首尾空格\n\n<input v-model.trim=\"msg\" />\n"
+    }
+
+  ]
+}
