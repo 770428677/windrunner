@@ -119,7 +119,12 @@ export default {
         parentDom[i].style.transform = '50px'
         parentDom[i].style.position = 'absolute'
         parentDom[i].style.top = minHeight + 'px'
-        parentDom[i].style.left = this.imgWidth * index + ((Math.floor((this.surplusW / 2)) + this.left / 2)) + 'px'
+        console.log(index)
+        if (index === 0) {
+          parentDom[i].style.left =  this.left + 'px'
+        } else {
+          parentDom[i].style.left = this.imgWidth * index + ((Math.floor((this.surplusW / 2)) + this.left / 2)) + 'px'
+        }
         console.log('left' + this.left)
         this.heightArray[index] += currHeight
       }
@@ -216,6 +221,9 @@ export default {
     border: 1px solid #cccccc;
     box-shadow: 0 0 5px #ccc;
     border-radius: 5px;
+  }
+  .waterFall-box{
+    margin-top: 20px;
   }
   .waterFall-box .img-box {
     width: 210px;
